@@ -13,7 +13,11 @@ import imaplib
 import email
 import json
 
-# nltk.download('punkt')
+# Check if 'punkt' is already downloaded, if not, download it
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 
 # Detect file encoding
 file = "spam.csv"
